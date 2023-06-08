@@ -45,7 +45,7 @@ const MenuItems = ({ isOpen }) => {
               align='center'
               justify={["center", "center", "flex-end", "flex-end"]}
               direction={["column", "column", "row", "row"]}
-              pt={[2, 2, 0, 0]}
+              pt={[4, 4, 0, 0]}
           >
               <Text>Home</Text>
               <Text>About</Text>
