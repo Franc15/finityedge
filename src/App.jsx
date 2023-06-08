@@ -1,14 +1,12 @@
-import { Box } from "@chakra-ui/react"
-import Home from "./pages/Home"
+import { Box } from '@chakra-ui/react'
+import RootLayout from './layouts/RootLayout'
 
 function App() {
 
-
   return (
-    <Box bgColor="gray.900">
-      <Home />
-      <h1>FinityEdge</h1>
-    </Box>
+    <>
+      <RootLayout />
+    </>
   )
 }
 

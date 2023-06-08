@@ -1,19 +1,68 @@
-import { Box, Flex, Image, Link, Spacer } from '@chakra-ui/react'
-import React from 'react'
-import Logo from '/logo.png'
+import { Flex, Heading, Box, Button, Text, Spacer, HStack, Stack } from '@chakra-ui/react'
+import NavbarContainer from './NavbarContainer'
+import Logo from './Logo'
+import { useState } from 'react'
+import {
+    CloseIcon,
+    HamburgerIcon,
+} from '@chakra-ui/icons'
 
-const Navbar = () => {
+const Navbar = (props) => {
+    
+  const [isOpen, setIsOpen] = useState(false)
+
+  const toggle = () => setIsOpen(!isOpen)
+
   return (
-      <Flex color='white' align='center'>
-        <Image src={Logo} alt='logo' />
-        <Spacer />
-        <Link px={7} href='#'>Home</Link>
-        <Link px={7} href='#'>About</Link>
-        <Link px={7} href='#'>What We Do</Link>
-        <Link px={7} href='#'>Technologies</Link>
-        <Link px={7} href='#'>Contact</Link>
-      </Flex>
+    <NavbarContainer isOpen={isOpen} {...props} >
+        <Logo
+            w={{base: '150px'}}
+            color={'white'}
+        />
+        <MenuToggle isOpen={isOpen} toggle={toggle} />
+        <MenuItems isOpen={isOpen} />
+    </NavbarContainer>
   )
 }
+
+const MenuItems = ({ isOpen }) => {
+    const buttonStyles = {
+        bg: 'blue.400',
+        color: 'white',
+        _hover: {
+            bg: 'white',
+            color: 'blue.500'
+        }
+    }
+
+    return (
+      <Box
+          display={{ base: isOpen ? "block" : "none", md: "block" }}
+          flexBasis={{ base: "100%", md: "auto" }}
+      >
+          <Stack
+              spacing={6}
+              align='center'
+              justify={["center", "center", "flex-end", "flex-end"]}
+              direction={["column", "column", "row", "row"]}
+              pt={[2, 2, 0, 0]}
+          >
+              <Text>Home</Text>
+              <Text>About</Text>
+              <Text>Services</Text>
+              <Text>Technologies</Text>
+              <Button sx={buttonStyles} w={{base: '100%'}}>Get in Touch</Button>
+          </Stack>
+      </Box>
+    )
+  }
+
+  const MenuToggle = ({ toggle, isOpen }) => {
+    return (
+      <Box display={{ base: "block", md: "none" }} onClick={toggle}>
+        {isOpen ? <CloseIcon /> : <HamburgerIcon/> }
+      </Box>
+    )
+  }
 
 export default Navbar
