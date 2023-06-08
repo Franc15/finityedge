@@ -27,10 +27,11 @@ import {
                 <Flex p={8} flex={1} align={'center'} justify={'center'}>
                     <Stack spacing={6} w={'full'} maxW={'lg'}>
                         <Heading fontSize={{ base: '3xl', md: '4xl', lg: '5xl' }}>
-                            <SkeletonText>
+                            <Skeleton h='40px'>
                                 Tech Solutions
-                            </SkeletonText>
+                            </Skeleton>
                         </Heading>
+                        <SkeletonText>Lorem ipsum is placeholder text commonly used in the graphic,</SkeletonText>
                         <SkeletonText>Lorem ipsum is placeholder text commonly used in the graphic,</SkeletonText>
                         <Stack direction={{ base: 'column', md: 'row' }} spacing={4}>
                             <Skeleton w='150px' h='40px'>Button</Skeleton>
