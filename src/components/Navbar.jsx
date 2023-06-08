@@ -14,10 +14,10 @@ const Navbar = (props) => {
   const toggle = () => setIsOpen(!isOpen)
 
   return (
-    <NavbarContainer {...props} >
+    <NavbarContainer isOpen={isOpen} {...props} >
         <Logo
             w={{base: '150px'}}
-            color={["gray.800", "gray.800", "primary.500", "primary.500"]}
+            color={'white'}
         />
         <MenuToggle isOpen={isOpen} toggle={toggle} />
         <MenuItems isOpen={isOpen} />
@@ -27,11 +27,11 @@ const Navbar = (props) => {
 
 const MenuItems = ({ isOpen }) => {
     const buttonStyles = {
-        bg: 'brand.200',
+        bg: 'blue.400',
         color: 'white',
         _hover: {
             bg: 'white',
-            color: 'brand.100'
+            color: 'blue.500'
         }
     }
 
