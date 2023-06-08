@@ -1,10 +1,12 @@
+import { Box } from '@chakra-ui/react'
+import RootLayout from './layouts/RootLayout'
+
 function App() {
 
-
   return (
-    <div>
-      <h1>FinityEdge</h1>
-    </div>
+    <>
+      <RootLayout />
+    </>
   )
 }
 
