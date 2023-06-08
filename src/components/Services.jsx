@@ -2,21 +2,17 @@ import { Box, Grid, GridItem, Heading, Text, VStack } from '@chakra-ui/react'
 
 function Services() {
     return (
-        <VStack m={24} spacing={16} textAlign='center' >
-            <Heading as='h1' size='2xl' color='gray.600'>
+        <VStack my={24} px={{ base: 8, md: 'auto'}} spacing={16} textAlign='center' w={'100%'}>
+            <Heading as='h1' size='2xl' color='gray.600' >
                 Services
             </Heading>
-            <Text w='63%' color='gray.500'>
-                Lorem ipsum is placeholder text commonly used in the graphic,
-                print, and publishing industries for previewing layouts and visual mockups.
-                Lorem ipsum is placeholder text commonly used in the graphic,
-                print, and publishing industries for previewing layouts and visual mockups.
+            <Text w={{base: '100%', md: '63%', lg: '63%'}} color='gray.500'>
                 Lorem ipsum is placeholder text commonly used in the graphic,
                 print, and publishing industries for previewing layouts and visual mockups.
                 Lorem ipsum is placeholder text commonly used in the graphic,
                 print, and publishing industries for previewing layouts and visual mockups.
             </Text>
-            <Grid templateColumns='repeat(3, 1fr)' gap={10} w='80%'>
+            <Grid templateColumns={{base:'repeat(1, 1fr)', md:'repeat(2, 1fr)', lg:'repeat(3, 1fr)'}} gap={10} w={{md:'80%'}}>
                 <GridItem w='100%' rounded='3xl' shadow='2xl' overflow='hidden'
                     borderWidth='1px' _hover={{ transform: "scale(1.03)", cursor: "pointer" }} >
                     <Box
